@@ -18,6 +18,8 @@
     "@paperclipai/adapter-codex-local": "workspace:*",
     "@paperclipai/adapter-cursor-local": "workspace:*",
     "@paperclipai/adapter-opencode-local": "workspace:*",
+    "@paperclipai/adapter-ollama-local": "workspace:*",
+    "@paperclipai/adapter-groq": "workspace:*",
     "@paperclipai/adapter-openclaw": "workspace:*",
     "@paperclipai/adapter-utils": "workspace:*",
     "@paperclipai/shared": "workspace:*",
