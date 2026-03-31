@@ -5,7 +5,13 @@
 set -e
 
 API="http://127.0.0.1:3100/api"
-GROQ_KEY="${GROQ_API_KEY:-${GROQ_API_KEY}}"
+GROQ_KEY="${GROQ_API_KEY}"
+
+if [ -z "$GROQ_KEY" ]; then
+  echo "ERROR: GROQ_API_KEY environment variable is required"
+  echo "  export GROQ_API_KEY='gsk_...'"
+  exit 1
+fi
 
 echo "=== Setting up Approtech News ==="
 
