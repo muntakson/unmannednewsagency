@@ -1,280 +1,425 @@
-<p align="center">
-  <img src="doc/assets/header.png" alt="Paperclip — runs your business" width="720" />
-</p>
+# Unmanned News Agency
 
-<p align="center">
-  <a href="#quickstart"><strong>Quickstart</strong></a> &middot;
-  <a href="https://paperclip.ing/docs"><strong>Docs</strong></a> &middot;
-  <a href="https://github.com/paperclipai/paperclip"><strong>GitHub</strong></a> &middot;
-  <a href="https://discord.gg/m4HZY7xNG3"><strong>Discord</strong></a>
-</p>
+Build and run a **fully autonomous AI news agency** — no human reporters, no editors, no manual publishing. AI agents discover news, write articles, and publish them to a website, 24/7.
 
-<p align="center">
-  <a href="https://github.com/paperclipai/paperclip/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" /></a>
-  <a href="https://github.com/paperclipai/paperclip/stargazers"><img src="https://img.shields.io/github/stars/paperclipai/paperclip?style=flat" alt="Stars" /></a>
-  <a href="https://discord.gg/m4HZY7xNG3"><img src="https://img.shields.io/discord/000000000?label=discord" alt="Discord" /></a>
-</p>
+This project is built on [Paperclip](https://github.com/paperclipai/paperclip), an open-source AI agent orchestration platform. Paperclip manages the "company" — org charts, task tracking, heartbeat scheduling, cost control — while the AI agents do the actual journalism.
 
-<br/>
+## Live Examples
 
-<div align="center">
-  <video src="https://github.com/user-attachments/assets/773bdfb2-6d1e-4e30-8c5f-3487d5b70c8f" width="600" controls></video>
-</div>
+| Site | Topic | URL |
+|---|---|---|
+| **ESP32 Times** | ESP32 microcontroller ecosystem | [esptimes.iotok.org](https://esptimes.iotok.org) |
+| **적정기술 타임즈** (Approtech Times) | Appropriate technology for developing regions | [appro.iotok.org](https://appro.iotok.org) |
 
-<br/>
-
-## What is Paperclip?
-
-# Open-source orchestration for zero-human companies
-
-**If OpenClaw is an _employee_, Paperclip is the _company_**
-
-Paperclip is a Node.js server and React UI that orchestrates a team of AI agents to run a business. Bring your own agents, assign goals, and track your agents' work and costs from one dashboard.
-
-It looks like a task manager — but under the hood it has org charts, budgets, governance, goal alignment, and agent coordination.
-
-**Manage business goals, not pull requests.**
-
-|        | Step            | Example                                                            |
-| ------ | --------------- | ------------------------------------------------------------------ |
-| **01** | Define the goal | _"Build the #1 AI note-taking app to $1M MRR."_                    |
-| **02** | Hire the team   | CEO, CTO, engineers, designers, marketers — any bot, any provider. |
-| **03** | Approve and run | Review strategy. Set budgets. Hit go. Monitor from the dashboard.  |
-
-<br/>
-
-> **COMING SOON: Clipmart** — Download and run entire companies with one click. Browse pre-built company templates — full org structures, agent configs, and skills — and import them into your Paperclip instance in seconds.
-
-<br/>
-
-<div align="center">
-<table>
-  <tr>
-    <td align="center"><strong>Works<br/>with</strong></td>
-    <td align="center"><img src="doc/assets/logos/openclaw.svg" width="32" alt="OpenClaw" /><br/><sub>OpenClaw</sub></td>
-    <td align="center"><img src="doc/assets/logos/claude.svg" width="32" alt="Claude" /><br/><sub>Claude Code</sub></td>
-    <td align="center"><img src="doc/assets/logos/codex.svg" width="32" alt="Codex" /><br/><sub>Codex</sub></td>
-    <td align="center"><img src="doc/assets/logos/cursor.svg" width="32" alt="Cursor" /><br/><sub>Cursor</sub></td>
-    <td align="center"><img src="doc/assets/logos/bash.svg" width="32" alt="Bash" /><br/><sub>Bash</sub></td>
-    <td align="center"><img src="doc/assets/logos/http.svg" width="32" alt="HTTP" /><br/><sub>HTTP</sub></td>
-  </tr>
-</table>
-
-<em>If it can receive a heartbeat, it's hired.</em>
-
-</div>
-
-<br/>
-
-## Paperclip is right for you if
-
-- ✅ You want to build **autonomous AI companies**
-- ✅ You **coordinate many different agents** (OpenClaw, Codex, Claude, Cursor) toward a common goal
-- ✅ You have **20 simultaneous Claude Code terminals** open and lose track of what everyone is doing
-- ✅ You want agents running **autonomously 24/7**, but still want to audit work and chime in when needed
-- ✅ You want to **monitor costs** and enforce budgets
-- ✅ You want a process for managing agents that **feels like using a task manager**
-- ✅ You want to manage your autonomous businesses **from your phone**
-
-<br/>
-
-## Features
-
-<table>
-<tr>
-<td align="center" width="33%">
-<h3>🔌 Bring Your Own Agent</h3>
-Any agent, any runtime, one org chart. If it can receive a heartbeat, it's hired.
-</td>
-<td align="center" width="33%">
-<h3>🎯 Goal Alignment</h3>
-Every task traces back to the company mission. Agents know <em>what</em> to do and <em>why</em>.
-</td>
-<td align="center" width="33%">
-<h3>💓 Heartbeats</h3>
-Agents wake on a schedule, check work, and act. Delegation flows up and down the org chart.
-</td>
-</tr>
-<tr>
-<td align="center">
-<h3>💰 Cost Control</h3>
-Monthly budgets per agent. When they hit the limit, they stop. No runaway costs.
-</td>
-<td align="center">
-<h3>🏢 Multi-Company</h3>
-One deployment, many companies. Complete data isolation. One control plane for your portfolio.
-</td>
-<td align="center">
-<h3>🎫 Ticket System</h3>
-Every conversation traced. Every decision explained. Full tool-call tracing and immutable audit log.
-</td>
-</tr>
-<tr>
-<td align="center">
-<h3>🛡️ Governance</h3>
-You're the board. Approve hires, override strategy, pause or terminate any agent — at any time.
-</td>
-<td align="center">
-<h3>📊 Org Chart</h3>
-Hierarchies, roles, reporting lines. Your agents have a boss, a title, and a job description.
-</td>
-<td align="center">
-<h3>📱 Mobile Ready</h3>
-Monitor and manage your autonomous businesses from anywhere.
-</td>
-</tr>
-</table>
-
-<br/>
-
-## Problems Paperclip solves
-
-| Without Paperclip                                                                                                                     | With Paperclip                                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| ❌ You have 20 Claude Code tabs open and can't track which one does what. On reboot you lose everything.                              | ✅ Tasks are ticket-based, conversations are threaded, sessions persist across reboots.                                                |
-| ❌ You manually gather context from several places to remind your bot what you're actually doing.                                     | ✅ Context flows from the task up through the project and company goals — your agent always knows what to do and why.                  |
-| ❌ Folders of agent configs are disorganized and you're re-inventing task management, communication, and coordination between agents. | ✅ Paperclip gives you org charts, ticketing, delegation, and governance out of the box — so you run a company, not a pile of scripts. |
-| ❌ Runaway loops waste hundreds of dollars of tokens and max your quota before you even know what happened.                           | ✅ Cost tracking surfaces token budgets and throttles agents when they're out. Management prioritizes with budgets.                    |
-| ❌ You have recurring jobs (customer support, social, reports) and have to remember to manually kick them off.                        | ✅ Heartbeats handle regular work on a schedule. Management supervises.                                                                |
-| ❌ You have an idea, you have to find your repo, fire up Claude Code, keep a tab open, and babysit it.                                | ✅ Add a task in Paperclip. Your coding agent works on it until it's done. Management reviews their work.                              |
-
-<br/>
-
-## Why Paperclip is special
-
-Paperclip handles the hard orchestration details correctly.
-
-|                                   |                                                                                                               |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Atomic execution.**             | Task checkout and budget enforcement are atomic, so no double-work and no runaway spend.                      |
-| **Persistent agent state.**       | Agents resume the same task context across heartbeats instead of restarting from scratch.                     |
-| **Runtime skill injection.**      | Agents can learn Paperclip workflows and project context at runtime, without retraining.                      |
-| **Governance with rollback.**     | Approval gates are enforced, config changes are revisioned, and bad changes can be rolled back safely.        |
-| **Goal-aware execution.**         | Tasks carry full goal ancestry so agents consistently see the "why," not just a title.                        |
-| **Portable company templates.**   | Export/import orgs, agents, and skills with secret scrubbing and collision handling.                          |
-| **True multi-company isolation.** | Every entity is company-scoped, so one deployment can run many companies with separate data and audit trails. |
-
-<br/>
-
-## What Paperclip is not
-
-|                              |                                                                                                                      |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| **Not a chatbot.**           | Agents have jobs, not chat windows.                                                                                  |
-| **Not an agent framework.**  | We don't tell you how to build agents. We tell you how to run a company made of them.                                |
-| **Not a workflow builder.**  | No drag-and-drop pipelines. Paperclip models companies — with org charts, goals, budgets, and governance.            |
-| **Not a prompt manager.**    | Agents bring their own prompts, models, and runtimes. Paperclip manages the organization they work in.               |
-| **Not a single-agent tool.** | This is for teams. If you have one agent, you probably don't need Paperclip. If you have twenty — you definitely do. |
-| **Not a code review tool.**  | Paperclip orchestrates work, not pull requests. Bring your own review process.                                       |
-
-<br/>
-
-## Quickstart
-
-Open source. Self-hosted. No Paperclip account required.
-
-```bash
-npx paperclipai onboard --yes
-```
-
-Or manually:
-
-```bash
-git clone https://github.com/paperclipai/paperclip.git
-cd paperclip
-pnpm install
-pnpm dev
-```
-
-This starts the API server at `http://localhost:3100`. An embedded PostgreSQL database is created automatically — no setup required.
-
-> **Requirements:** Node.js 20+, pnpm 9.15+
-
-<br/>
-
-## FAQ
-
-**What does a typical setup look like?**
-Locally, a single Node.js process manages an embedded Postgres and local file storage. For production, point it at your own Postgres and deploy however you like. Configure projects, agents, and goals — the agents take care of the rest.
-
-If you're a solo-entreprenuer you can use Tailscale to access Paperclip on the go. Then later you can deploy to e.g. Vercel when you need it.
-
-**Can I run multiple companies?**
-Yes. A single deployment can run an unlimited number of companies with complete data isolation.
-
-**How is Paperclip different from agents like OpenClaw or Claude Code?**
-Paperclip _uses_ those agents. It orchestrates them into a company — with org charts, budgets, goals, governance, and accountability.
-
-**Why should I use Paperclip instead of just pointing my OpenClaw to Asana or Trello?**
-Agent orchestration has subtleties in how you coordinate who has work checked out, how to maintain sessions, monitoring costs, establishing governance - Paperclip does this for you.
-
-(Bring-your-own-ticket-system is on the Roadmap)
-
-**Do agents run continuously?**
-By default, agents run on scheduled heartbeats and event-based triggers (task assignment, @-mentions). You can also hook in continuous agents like OpenClaw. You bring your agent and Paperclip coordinates.
-
-<br/>
-
-## Development
-
-```bash
-pnpm dev              # Full dev (API + UI)
-pnpm dev:server       # Server only
-pnpm build            # Build all
-pnpm typecheck        # Type checking
-pnpm test:run         # Run tests
-pnpm db:generate      # Generate DB migration
-pnpm db:migrate       # Apply migrations
-```
-
-See [doc/DEVELOPING.md](doc/DEVELOPING.md) for the full development guide.
-
-<br/>
-
-## Roadmap
-
-- ⚪ Get OpenClaw onboarding easier
-- ⚪ Get cloud agents working e.g. Cursor / e2b agents
-- ⚪ ClipMart - buy and sell entire agent companies
-- ⚪ Easy agent configurations / easier to understand
-- ⚪ Better support for harness engineering
-- ⚪ Plugin system (e.g. if you want to add a knowledgebase, custom tracing, queues, etc)
-- ⚪ Better docs
-
-<br/>
-
-## Contributing
-
-We welcome contributions. See the [contributing guide](CONTRIBUTING.md) for details.
-
-<!-- TODO: add CONTRIBUTING.md -->
-
-<br/>
-
-## Community
-
-- [Discord](https://discord.gg/m4HZY7xNG3) — Join the community
-- [GitHub Issues](https://github.com/paperclipai/paperclip/issues) — bugs and feature requests
-- [GitHub Discussions](https://github.com/paperclipai/paperclip/discussions) — ideas and RFC
-
-<br/>
-
-## License
-
-MIT &copy; 2026 Paperclip
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/image?repos=paperclipai/paperclip&type=date&legend=top-left)](https://www.star-history.com/?repos=paperclipai%2Fpaperclip&type=date&legend=top-left)
-
-<br/>
+Both sites run entirely on AI — from news discovery to article writing to web publishing.
 
 ---
 
-<p align="center">
-  <img src="doc/assets/footer.jpg" alt="" width="720" />
-</p>
+## How It Works
 
-<p align="center">
-  <sub>Open source under MIT. Built for people who want to run companies, not babysit agents.</sub>
-</p>
+### The Agent Team
+
+Each unmanned news agency has 4 AI agents organized in a newsroom structure:
+
+```
+CEO (Chief Editor)
+ ├── Scout (News Scout)    — finds news, writes research briefs
+ ├── Writer (Tech Writer)  — turns briefs into full articles
+ └── Editor (Content Editor) — reviews for quality (optional)
+```
+
+### The Pipeline
+
+```
+  Heartbeat Timer (every 12h)
+       |
+       v
+  SCOUT wakes up
+    1. web_search() — searches configured news sources
+    2. fetch_url()  — reads full articles, extracts images
+    3. Writes research brief with key facts + source URL
+    4. create_issue(assignee=Writer) — delegates to Writer
+       |
+       v  (auto-triggered within ~30 seconds)
+  WRITER wakes up
+    1. Reads Scout's research brief
+    2. Writes a 600-1200 word article
+    3. Sets status to "done"
+       |
+       v
+  Article appears on the website
+```
+
+**Key insight:** Scout has web tools (`web_search`, `fetch_url`) and does the research. Writer does NOT have web access — it writes purely from the brief Scout provides. This separation ensures article quality depends on Scout's research quality.
+
+### Heartbeat System
+
+Paperclip's heartbeat scheduler runs every 30 seconds. Each agent has a configurable interval (e.g., 12 hours). When the timer fires, the agent wakes up, checks its tasks, and acts autonomously. Agents can also trigger each other — when Scout creates a task for Writer, Writer wakes up within seconds.
+
+### Two Ways to Create Articles
+
+1. **Automatic (Heartbeat)** — Scout wakes up on schedule, searches the web, and starts the pipeline
+2. **Manual (Admin Dashboard)** — An admin enters a topic or URL at `/dashboard`, and Scout researches it immediately
+
+---
+
+## How ESP32 Times Was Built
+
+[ESP32 Times](https://esptimes.iotok.org) covers the ESP32 microcontroller ecosystem — dev boards, frameworks, community projects, tutorials.
+
+### Architecture
+
+- **Paperclip server** on port 3100 (orchestration + PostgreSQL)
+- **ESP32 Times Express server** on port 3200 (reads articles from Paperclip API, renders as a news site)
+- **4 agents** on Groq API using `llama-3.3-70b-versatile`
+- **Heartbeat**: 12 hours (agents wake twice daily)
+- **Company ID**: `2eee727c-7dbb-44b1-91dd-ba948c6d7e0a`
+
+### Scout's News Sources
+
+Scout is configured to search for ESP32 news from:
+- Hackaday (ESP32 tag)
+- Reddit r/esp32
+- Espressif GitHub releases
+- CNX Software
+- Adafruit / SparkFun / Seeed new boards
+
+### Setup
+
+```bash
+# 1. Start Paperclip server
+pnpm --filter @paperclipai/server exec tsx src/index.ts
+
+# 2. Run setup script (creates company + agents)
+bash scripts/setup-esp32times.sh
+
+# 3. Start ESP32 Times website
+cd esp32times && node server.js
+```
+
+Full documentation: [`esp32times/HOW-IT-WORKS.md`](esp32times/HOW-IT-WORKS.md) and [`esp32times/BOOK-CHAPTER.md`](esp32times/BOOK-CHAPTER.md) (Korean: [`BOOK-CHAPTER-KO.md`](esp32times/BOOK-CHAPTER-KO.md))
+
+---
+
+## How 적정기술 타임즈 (Approtech Times) Was Built
+
+[Approtech Times](https://appro.iotok.org) covers appropriate technology (적정기술) — innovations for water, energy, health, agriculture, education, and housing in underserved communities worldwide.
+
+### Architecture
+
+- **Paperclip server** on port 3100
+- **Approtech Times Express server** on port 3300
+- **4 agents** on Groq API using `llama-3.3-70b-versatile`
+- **Pipeline**: Scout → Writer → done (Editor disabled due to llama tool-call instability)
+- **Company ID**: `c372a25b-d2ad-483c-86a9-4f243592e557`
+
+### Scout's News Sources
+
+Scout is configured with Korean and international appropriate technology sources:
+
+| Category | Sources |
+|---|---|
+| **Korean** | 적정기술학회 (appropriate.or.kr), 나눔과기술 (stiweb.org), 국경없는과학자회 |
+| **International** | Engineering for Change, Practical Action, MIT D-Lab, Appropedia, UNESCO |
+| **Academic** | Springer Journal of Appropriate Technology |
+| **Search terms** | "appropriate technology", "solar water purifier", "off-grid energy", "AI poverty", "low-cost medical device" |
+
+### Setup
+
+```bash
+# 1. Start Paperclip server
+pnpm --filter @paperclipai/server exec tsx src/index.ts
+
+# 2. Set Groq API key and run setup
+export GROQ_API_KEY='gsk_...'
+bash scripts/setup-approtechnews.sh
+
+# 3. Start Approtech Times website
+COMPANY_ID=c372a25b-d2ad-483c-86a9-4f243592e557 node approtechnews/server.js
+```
+
+Full documentation: [`approtechnews/BOOK-CHAPTER-KO.md`](approtechnews/BOOK-CHAPTER-KO.md)
+
+---
+
+## Step-by-Step: Customize This for Your Own News Topic
+
+This section walks through a real example. Imagine an **NGO in Korea that helps migrant workers** — they want an unmanned news agency that automatically scrapes and publishes news about legal advice, visa regulations, homeland news, and support resources for migrant communities.
+
+### Step 1: Clone the Repo and Set Up the Server
+
+```bash
+# On your Ubuntu server
+git clone https://github.com/muntakson/unmannednewsagency.git
+cd unmannednewsagency
+
+# Install dependencies
+pnpm install
+
+# Start Paperclip server (runs on port 3100 with embedded PostgreSQL)
+pnpm --filter @paperclipai/server exec tsx src/index.ts
+```
+
+**Requirements:** Node.js 20+, pnpm 9.15+
+
+### Step 2: Choose Your LLM Backend
+
+You have two options for powering your agents:
+
+| Option | Pros | Cons | Best for |
+|---|---|---|---|
+| **Groq API** (cloud) | Fast, reliable, free tier available | Needs internet, rate limits | Production sites, reliable publishing |
+| **Ollama** (local) | Free, private, no internet needed | Slower, needs GPU, less reliable tool calls | Experimentation, privacy-sensitive topics |
+
+**For the NGO example, we recommend Groq with Qwen 3.5:**
+
+```bash
+# Get a free API key from https://console.groq.com
+export GROQ_API_KEY='gsk_your_key_here'
+```
+
+**Or run locally with Ollama + Qwen:**
+
+```bash
+# Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+
+# Pull a model
+ollama pull qwen3:32b
+
+# Ollama runs at http://localhost:11434
+```
+
+### Step 3: Copy and Customize a Setup Script
+
+Copy the Approtech Times setup script as your starting point:
+
+```bash
+cp scripts/setup-approtechnews.sh scripts/setup-migrantnews.sh
+```
+
+Now edit `scripts/setup-migrantnews.sh` and customize these sections:
+
+#### 3a. Company Name and Mission
+
+```bash
+COMPANY=$(curl -s -X POST "$API/companies" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Migrant Support News",
+    "mission": "AI-powered news agency providing migrant workers in Korea with legal advice, visa updates, homeland news, and community support resources in multiple languages.",
+    "identifier": "migrantnews"
+  }')
+```
+
+#### 3b. Scout Agent — Define Your News Sources
+
+This is the most important customization. Scout's system prompt determines what news gets discovered:
+
+```bash
+"systemPrompt": "You are the News Scout for Migrant Support News.
+Your job is to find news relevant to migrant workers in Korea.
+
+Your workflow:
+1. Call list_my_issues() to check for assigned tasks
+2. If you have a task, research that topic
+3. If no tasks, search for news autonomously
+
+For AUTONOMOUS searches, use fetch_url on these sources:
+- Korean immigration: https://www.immigration.go.kr/
+- Ministry of Employment: https://www.moel.go.kr/
+- 외국인근로자지원센터: https://www.migrantok.org/
+- 다문화가족지원센터: https://www.liveinkorea.kr/
+- Legal aid: https://www.klac.or.kr/ (대한법률구조공단)
+- IOM Korea: https://korea.iom.int/
+
+Also use web_search for:
+- '외국인근로자 법률 상담'
+- 'migrant worker Korea visa update'
+- 'E-9 visa regulation change'
+- '다문화가족 지원 정책'
+- 'foreign worker rights Korea 2026'
+
+For each story found:
+1. Use fetch_url to read the full article
+2. Write a research brief with key facts and source URL
+3. Create a task for Writer using create_issue()
+4. Mark your own task as done"
+```
+
+#### 3c. Writer Agent — Set the Writing Style
+
+Customize the Writer's tone and format for your audience:
+
+```bash
+"systemPrompt": "You are the Writer for Migrant Support News.
+Write clear, practical articles for migrant workers in Korea.
+
+Style guidelines:
+- Use simple, clear language (many readers are non-native Korean speakers)
+- Lead with actionable information (what to do, where to go, deadlines)
+- Include phone numbers, addresses, and website links when available
+- Explain legal terms in plain language
+- Add section headers for easy scanning
+- 600-1200 words per article
+- ALWAYS preserve Source: [title](url) from Scout's brief"
+```
+
+#### 3d. CEO Agent — Set the Heartbeat Schedule
+
+The CEO's heartbeat determines how often agents autonomously search for news:
+
+```bash
+# Check for new news every 12 hours (43200 seconds)
+"heartbeatEnabled": true,
+"heartbeatIntervalSec": 43200
+
+# Or every 6 hours for more frequent updates
+"heartbeatIntervalSec": 21600
+
+# Or once daily
+"heartbeatIntervalSec": 86400
+```
+
+#### 3e. Choose the LLM Model
+
+**Using Groq (recommended):**
+
+```bash
+"adapterType": "groq",
+"adapterConfig": {
+  "apiKey": "$GROQ_KEY",
+  "model": "qwen-qwq-32b",        # or "llama-3.3-70b-versatile"
+  "timeoutSec": 120
+}
+```
+
+**Using local Ollama:**
+
+```bash
+"adapterType": "ollama_local",
+"adapterConfig": {
+  "model": "qwen3:32b",
+  "baseUrl": "http://localhost:11434",
+  "timeoutSec": 120
+}
+```
+
+### Step 4: Run the Setup Script
+
+```bash
+# Create the company and agents in Paperclip
+bash scripts/setup-migrantnews.sh
+
+# Note down the Company ID printed at the end — you'll need it
+```
+
+### Step 5: Copy and Customize the Website
+
+Copy the Approtech Times site as a template:
+
+```bash
+cp -r approtechnews/ migrantnews/
+```
+
+Edit `migrantnews/server.js`:
+
+```javascript
+const PORT = process.env.PORT || 3400;  // Pick a free port
+const COMPANY_ID = process.env.COMPANY_ID || "your-company-id-here";
+```
+
+Customize the HTML templates in `migrantnews/views/` — change the site name, colors, logo, and navigation.
+
+### Step 6: Start Everything
+
+```bash
+# Terminal 1: Paperclip server (if not already running)
+pnpm --filter @paperclipai/server exec tsx src/index.ts
+
+# Terminal 2: Your news site
+COMPANY_ID=your-company-id node migrantnews/server.js
+```
+
+Your unmanned news agency is now live at `http://localhost:3400`.
+
+### Step 7: Expose to the Internet (Optional)
+
+Set up Nginx reverse proxy on your Ubuntu server:
+
+```nginx
+server {
+    server_name migrantnews.example.org;
+
+    location / {
+        proxy_pass http://127.0.0.1:3400;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+```
+
+```bash
+sudo ln -s /etc/nginx/sites-available/migrantnews /etc/nginx/sites-enabled/
+sudo certbot --nginx -d migrantnews.example.org   # Free HTTPS
+sudo systemctl reload nginx
+```
+
+### Step 8: Manual Article Creation via Dashboard
+
+Visit `http://localhost:3400/dashboard` to manually trigger articles:
+
+| Input method | Result |
+|---|---|
+| Direct article URL (e.g. `immigration.go.kr/news/...`) | **Best** — Scout reads the page and creates a detailed brief |
+| Topic with key facts in the description | **Good** — Writer uses facts directly, no hallucination |
+| Short topic text (e.g. "E-9 visa changes 2026") | **OK** — Scout uses `web_search`, results vary |
+| Google search URL | **Bad** — `fetch_url` can't parse JS-rendered Google pages |
+
+---
+
+## Project Structure
+
+```
+unmannednewsagency/
+  server/              — Paperclip API server (Express.js, port 3100)
+  ui/                  — Paperclip React dashboard
+  packages/
+    adapters/
+      groq/            — Groq cloud API adapter (recommended)
+      ollama-local/    — Ollama local LLM adapter
+      claude-local/    — Claude Code adapter
+      codex-local/     — OpenAI Codex adapter
+    db/                — Database schema (Drizzle ORM + PostgreSQL)
+    shared/            — Shared types and constants
+  esp32times/          — ESP32 Times news site
+  approtechnews/       — Approtech Times news site
+  scripts/
+    setup-esp32times.sh      — ESP32 Times setup script
+    setup-approtechnews.sh   — Approtech Times setup script
+```
+
+## Requirements
+
+- **OS**: Ubuntu 20.04+ (or any Linux with Node.js)
+- **Node.js**: 20+
+- **pnpm**: 9.15+
+- **LLM**: Groq API key (free at [console.groq.com](https://console.groq.com)) or local Ollama with GPU
+
+## Common Pitfalls
+
+- Kill ALL tsx/pnpm processes before restarting server: `pkill -f "tsx"`
+- API field for issue assignment is `assigneeAgentId`, NOT `assigneeId`
+- Ollama tool calling requires `stream: false`
+- When updating agent config, read full config first to avoid overwriting API keys
+- Groq has rate limits — adapter retries up to 3 times with backoff
+- Facebook pages are hard to scrape with `fetch_url`
+- Google search result pages can't be parsed — use direct article URLs
+
+## Credits
+
+Built on [Paperclip](https://github.com/paperclipai/paperclip) — open-source orchestration for AI agent teams.
+
+## License
+
+MIT
