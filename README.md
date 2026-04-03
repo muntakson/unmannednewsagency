@@ -420,6 +420,16 @@ unmannednewsagency/
 
 Built on [Paperclip](https://github.com/paperclipai/paperclip) — open-source orchestration for AI agent teams.
 
+### Provided by
+
+**사단법인 나눔과기술 (STI — Sharing and Technologies Incorporated)**
+
+> STI는 과학기술 전문성을 사용하여 세계의 어려운 이웃에게 필요한 적정기술을 보급, 지원하며, 이공계 젊은이들에게 나눔의 정신이 담긴 과학기술 문화를 확산하는 협력체입니다.
+
+- Web: [stiweb.org](http://stiweb.org)
+- Tel: 042-863-7775
+- Address: 대전광역시 유성구 대덕대로 578번길 16, 4층
+
 ## License
 
 MIT
